@@ -5,7 +5,14 @@ RUN apt-get update \
  && docker-php-ext-install pdo_pgsql \
  && rm -rf /var/lib/apt/lists/*
 
-COPY . /var/www/html/
+# Make sure exactly one Apache MPM (prefork, required by mod_php) is enabled
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.load /etc/apache2/mods-enabled/mpm_*.conf \
+ && a2enmod mpm_prefork rewrite \
+ && echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf \
+ && a2enconf servername
 
-# Railway provides the port in $PORT; make Apache listen on it
-CMD ["sh", "-c", "sed -i \"s/Listen 80/Listen ${PORT:-80}/\" /etc/apache2/ports.conf && sed -i \"s/:80>/:${PORT:-80}>/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
+COPY . /var/www/html/
+COPY start.sh /usr/local/bin/start.sh
+RUN sed -i 's/\r$//' /usr/local/bin/start.sh && chmod +x /usr/local/bin/start.sh
+
+CMD ["/usr/local/bin/start.sh"]
