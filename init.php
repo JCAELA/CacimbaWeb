@@ -2,6 +2,21 @@
 	ob_start();
 	session_start();
 
+	// Never print PHP errors as HTML (it breaks the JSON); log them instead
+	ini_set('display_errors', '0');
+	ini_set('log_errors', '1');
+	ini_set('memory_limit', '512M');
+	set_time_limit(60);
+
+	// If PHP dies with a fatal error, return it as plain text starting with ERROR
+	register_shutdown_function(function(){
+		$e = error_get_last();
+		if ($e && in_array($e['type'], [E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_PARSE])) {
+			while (ob_get_level()) { ob_end_clean(); }
+			echo "ERROR fatal: ".$e['message'];
+		}
+	});
+
 	// Credentials come from environment variables (set them in Railway -> Variables)
 	$host = getenv('DB_HOST');
 	$port = getenv('DB_PORT') ?: '5432';
@@ -19,7 +34,6 @@
 		$pdo = new PDO($dsn, $user, $pass, $opt);
 	} catch (PDOException $e){
 		error_log("DB connection failed: ".$e->getMessage());
-		// "ERROR" prefix is what the frontend expects
 		die("ERROR: database connection failed");
 	}
 
