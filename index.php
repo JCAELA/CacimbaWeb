@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>First Webmap</title>
+	<title>Cacimba – WebGIS ECOGIS</title>
 
 	<link rel="stylesheet" href="styles.css">
 
@@ -102,6 +102,33 @@
                     Início
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
+
+                <div style="text-align:center; margin:20px 0 10px;">
+                    <img src="img/logo-ecogis.png" alt="ECOGIS" style="max-width:180px; height:auto;" onerror="this.style.display='none'">
+                </div>
+
+                <h3 style="text-align:center; margin:10px 0;">Cacimba</h3>
+                <p style="text-align:center; margin-top:0;"><b>WebGIS de Recursos Hídricos</b></p>
+
+                <p style="text-align:justify;">
+                    Esta plataforma reúne num único mapa interativo informação sobre as nascentes,
+                    os rios e os lagos da região. Clique em cada elemento para ver o tipo, a qualidade
+                    da água, o estado de conservação e o uso, procure um recurso pelo nome e registe
+                    novos dados diretamente no mapa.
+                </p>
+                <p style="text-align:justify;">
+                    A ECOGIS disponibiliza esta ferramenta para apoiar o conhecimento,
+                    a gestão e a proteção da água.
+                </p>
+
+                <hr>
+                <p style="font-size:12px; color:#666; text-align:center;">
+                    Use os ícones à esquerda para consultar e adicionar
+                    <i class="fa-solid fa-droplet"></i> nascentes,
+                    <i class="fa-solid fa-bridge-water"></i> rios e
+                    <i class="fa-solid fa-water"></i> lagos.<br><br>
+                    &copy; ECOGIS
+                </p>
             </div>
 
 
