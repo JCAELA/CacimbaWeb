@@ -107,7 +107,7 @@
                     <img src="img/logo-ecogis.png" alt="ECOGIS" style="max-width:180px; height:auto;" onerror="this.style.display='none'">
                 </div>
 
-                <h3 style="text-align:center; margin:10px 0;">Cacimba</h3>
+                
                 <p style="text-align:center; margin-top:0;"><b>WebGIS de Recursos Hídricos</b></p>
 
                 <p style="text-align:justify;">
