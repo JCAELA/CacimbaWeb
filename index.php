@@ -123,7 +123,7 @@
 
                 <hr>
                 <p style="font-size:12px; color:#666; text-align:center;">
-                    Use os ícones à esquerda para consultar e adicionar
+                    Use os ícones à esquerda para consultar e adicionar<br><br>
                     <i class="fa-solid fa-droplet"></i> nascentes,
                     <i class="fa-solid fa-bridge-water"></i> rios e
                     <i class="fa-solid fa-water"></i> lagos.<br><br>
