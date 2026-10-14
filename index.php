@@ -112,7 +112,7 @@
 
                 <p style="text-align:justify;">
                     Esta plataforma reúne num único mapa interativo informação sobre as nascentes,
-                    os rios e os lagos da região. Clique em cada elemento para ver o tipo, a qualidade
+                    os rios e os lagos da região.<br><br>Clique em cada elemento para ver o tipo, a qualidade
                     da água, o estado de conservação e o uso, procure um recurso pelo nome e registe
                     novos dados diretamente no mapa.
                 </p>
